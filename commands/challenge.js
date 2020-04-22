@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'dontknow',
-    description: 'Leader cant break a clue',
+    name: 'challenge',
+    description: 'Leader cant break a contact',
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
