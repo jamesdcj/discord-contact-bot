@@ -34,6 +34,7 @@ client.on('message', msg => {
     // Only process if we have the command
     // TODO: Let user know they got it wrong
     if (!client.commands.has(commandName)) {
+        msg.reply(`I don't have that command. Try ${prefix}help for a list of commands`);
         return;
     }
 
