@@ -38,6 +38,8 @@ module.exports = {
 
         game.clues.splice(clueID - 1, 1);
 
+        message.reply(`Your clue was removed`);
+
         var messageText = ``;
         if (game.clues.length == 0) {
             messageText += `No current clues!`;
