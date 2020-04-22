@@ -1,17 +1,16 @@
 module.exports = {
     name: 'setword',
     description: 'Leader sets the secret word',
+    usage: '<word>',
+    example: 'funky',
+    guildOnly: false,
+    dmOnly: true,
     execute(message, args, game) {
         // TODO: create game state machine
         // if (game.inProgress == true) {
         //     message.reply(`Sorry, game is in progress already. Talk to ${game.leader.username} to start a new one!`);
         //     return;
         // }
-
-        if (message.channel.type != 'dm') {
-            message.reply(`Pssst...this should be a secret dm to me..`);
-            return;
-        }
 
         if (message.author != game.leader)
         {

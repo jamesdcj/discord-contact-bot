@@ -1,14 +1,13 @@
 module.exports = {
     name: 'forfeit',
-    description: 'Players want to give up',
+    description: 'Player wants to give up',
+    usage: '',
+    example: '',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress === false) {
             message.reply(`No game in progress, silly! Get the fun started by sending !start`);
-            return;
-        }
-
-        if (message.channel != game.channel) {
-            message.reply(`Send me this in ${game.channel}`);
             return;
         }
 

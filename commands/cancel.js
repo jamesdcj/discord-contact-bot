@@ -1,14 +1,13 @@
 module.exports = {
     name: 'cancel',
-    description: 'Clue provider removes their clue',
+    description: 'Clue author removes their clue',
+    usage: '<clue #>',
+    example: `1`,
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`You can send this to me in ${game.channel}`);
             return;
         }
 

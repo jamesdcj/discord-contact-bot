@@ -1,14 +1,13 @@
 module.exports = {
     name: 'contact',
     description: '2nd guesser makes a contact',
+    usage: '<clue #>',
+    example: '1',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`You need to establish the contact in ${game.channel.guild.name}#${game.channel.name}`);
             return;
         }
 

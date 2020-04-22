@@ -1,14 +1,13 @@
 module.exports = {
     name: 'update',
     description: 'Change the text for a given clue',
+    usage: '<clue #> <full text of updated clue>',
+    example: '1 what birds and planes do',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`You can send this to me in ${game.channel}`);
             return;
         }
 

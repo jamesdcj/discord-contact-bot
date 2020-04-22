@@ -40,6 +40,15 @@ client.on('message', msg => {
     // Get the actual command instance
     const command = client.commands.get(commandName);
 
+    // Check if the sent command is channel scoped
+    if (command.guildOnly && msg.channel.type !== 'text') {
+        return msg.reply(`You need to send this command in a public channel`);
+    } else if (command.dmOnly && msg.channel.type !== 'dm') {
+        return msg.reply(`You need to send this command in dm with me only`);
+    }
+
+    // Command was sent in the correct channel, let's try and execute
+
     try {
         command.execute(msg, args, myContactGame);
     } catch (error) {

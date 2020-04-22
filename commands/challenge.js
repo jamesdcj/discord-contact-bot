@@ -1,14 +1,13 @@
 module.exports = {
     name: 'challenge',
-    description: 'Leader cant break a contact',
+    description: 'Leader challenges the contact holders to confirm',
+    usage: '<clue #>',
+    example: `1`,
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`You need to guess clues in ${game.channel}`);
             return;
         }
 

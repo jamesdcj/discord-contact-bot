@@ -1,14 +1,13 @@
 module.exports = {
     name: 'reveal',
     description: 'Contact partner tries to complete the contact',
+    usage: '<clue #> <word>',
+    example: '1 fly',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`Try and complete the contact in ${game.channel}`);
             return;
         }
 

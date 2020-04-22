@@ -1,14 +1,13 @@
 module.exports = {
     name: 'clue',
     description: 'Guesser sets a clue',
+    usage: '<word> <full text of your clue>',
+    example: 'fly what birds do',
+    guildOnly: false,
+    dmOnly: true,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'dm') {
-            message.reply(`Your clue needs to me privately. Unfortunately you showed everyone your word. Tough luck.`);
             return;
         }
 

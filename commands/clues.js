@@ -1,14 +1,13 @@
 module.exports = {
     name: 'clues',
     description: 'List out the clues.',
+    usage: '',
+    example: '',
+    guildOnly: false,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text' || message.channel.id != game.channel.id) {
-            message.reply(`Your clue needs to be public. Send in ${game.channel.guild.name}#${game.channel.name}`);
             return;
         }
 
@@ -24,6 +23,6 @@ module.exports = {
             }
         }
 
-        game.channel.send(reply);
+        message.reply(reply);
     },
 }

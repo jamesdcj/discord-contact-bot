@@ -1,14 +1,13 @@
 module.exports = {
     name: 'stop',
     description: 'Stop the game!',
+    usage: '',
+    example: '',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress === false) {
             message.reply(`No game in progress, silly! Get the fun started by sending !start`);
-            return;
-        }
-
-        if (message.channel.type != 'text' || message.channel.id != game.channel.id) {
-            message.reply(`Send me this in ${game.channel.guild.name}#${game.channel.name}`);
             return;
         }
 

@@ -1,14 +1,13 @@
 module.exports = {
     name: 'guess',
     description: 'Leader tries to break contact',
+    usage: '<clue #> <word>',
+    example: '1 fly',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`You need to guess clues in ${game.channel}`);
             return;
         }
 

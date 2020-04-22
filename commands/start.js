@@ -1,14 +1,13 @@
 module.exports = {
     name: 'start',
     description: 'Start the game!',
+    usage: '',
+    example: '',
+    guildOnly: true,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress == true) {
             message.reply(`Sorry, game is in progress already. Talk to ${game.leader} to start a new one!`);
-            return;
-        }
-
-        if (message.channel.type != 'text') {
-            message.reply(`Send me this in a text channel to play`);
             return;
         }
 

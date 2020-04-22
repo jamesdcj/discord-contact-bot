@@ -1,6 +1,10 @@
 module.exports = {
     name: 'status',
     description: 'Current status of the game',
+    usage: '',
+    example: '',
+    guildOnly: false,
+    dmOnly: false,
     execute(message, args, game) {
         if (game.inProgress != true) {
             message.reply(`No game started yet. Send !start to be the leader`);
