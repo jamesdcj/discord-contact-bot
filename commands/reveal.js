@@ -49,11 +49,18 @@ module.exports = {
         var clueWordGuess = args[1].toLowerCase();
 
         if (clueWordGuess === targetClue.word) {
+
+            // Check if the players win by guessing the secret word
+            if (targetClue.word === game.secretWord) {
+                game.gameOver();
+                return;
+            }
+
+            // The contact word was not the original secret word, so move the game forward
             game.advanceGame();
             if (game.revealLen === game.secretWord.length) {
-                game.channel.send(`*dab* *dab* *dab* PLAYERS WIN! ${game.leader} YOU SUCK.`);
-                game.channel.send(`Who wants to be the leader for the new game? Send !start to be the new leader`);
-                game.reset();
+                // Players win by revealing the whole secret word
+                game.gameOver();
             } else {
                 game.channel.send(`Successful contact. Word thus far: "${game.secretWord.substring(0, game.revealLen)}"`);
             }          

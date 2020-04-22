@@ -76,6 +76,13 @@ module.exports = class ContactGame {
         this._clues = [];
     }
 
+    gameOver() {
+        this._channel.send(`*dab* *dab* *dab* PLAYERS WIN! ${this._leader} YOU SUCK. Their word was "${this._secretWord}"`);
+        this._channel.send(`Who wants to be the leader for the new game? Send !start to be the new leader`);
+
+        this.reset();
+    }
+
     reset() {
         this._inProgress = false;
         this._leader = null;
