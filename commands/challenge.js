@@ -44,6 +44,8 @@ module.exports = {
             return;
         }
 
+        clue.challened = true;
+
         var revealString = `${clue.partner} Reply here with !reveal ${clueID} <word>\n`;
         revealString += `Where <word> is what you were thinking is the answer to "${clue.text}"`;
         game.channel.send(revealString);

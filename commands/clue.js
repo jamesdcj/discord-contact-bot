@@ -37,6 +37,7 @@ module.exports = {
             author: message.author,
             partner: null,
             contact: false,
+            challenged: false,
             word: clueWord
         }
 

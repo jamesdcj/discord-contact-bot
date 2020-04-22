@@ -40,7 +40,7 @@ module.exports = {
 
         const clue = game.clues[clueID - 1];
 
-        if (clue.word === args[1]) {
+        if (clue.word === args[1].toLowerCase()) {
             game.channel.send(`Clue #${clueID} broken`);
             game.clues.splice(clueID - 1, 1);
 

@@ -44,7 +44,10 @@ module.exports = {
             return;    
         }
 
-        // TODO: verify that the clue has been !dontknow'd ?
+        if (targetClue.challenged === false) {
+            message.reply(`Not fair! You need to give ${game.leader} a chance to break this contact first!`);
+            return;
+        }
 
         var clueWordGuess = args[1].toLowerCase();
 
