@@ -6,7 +6,7 @@ module.exports = class ContactGame {
         this._secretWord = "";
         this._revealLen = 0;
         this._clues = []
-        this._forfeitCount = 0;
+        this._forfeitUsers = [];
         this._bossid = bossid;
     }
 
@@ -50,12 +50,12 @@ module.exports = class ContactGame {
         this._revealLen = x;
     }
 
-    get forfeitCount() {
-        return this._forfeitCount;
+    get forfeitUsers() {
+        return this._forfeitUsers;
     }
 
-    set forfeitCount(x) {
-        this._forfeitCount = x;
+    addForfeitUser(x) {
+        this._forfeitUsers.push(x);
     }
 
     // Only allow the BOSS to be get
@@ -90,6 +90,6 @@ module.exports = class ContactGame {
         this._secretWord = "";
         this._revealLen = 0;
         this._clues = []
-        this._forfeitCount = 0;
+        this._forfeitUsers = [];
     }
 }
