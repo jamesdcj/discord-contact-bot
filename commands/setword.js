@@ -28,7 +28,7 @@ module.exports = {
 
         game.inProgress = true;
         game.leader = message.author;
-        game.secretWord = args[0];
+        game.secretWord = args[0].toLowerCase();
         game.revealLen = 1;
 
         message.reply(`Got it. Go back to start playing`);

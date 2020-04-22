@@ -24,7 +24,7 @@ module.exports = {
             return;
         }
 
-        var clueWord = args[0];
+        var clueWord = args[0].toLowerCase();
         var clueText = args.slice(1).join(" ");
 
         if (clueWord.substring(0, game.revealLen) != game.secretWord.substring(0, game.revealLen)) {
@@ -42,7 +42,7 @@ module.exports = {
 
         game.addClue(clue);
 
-        message.reply(`Got it. Your clue text is posted in ${game.channel.guild.name}#${game.channel.name}`);
+        message.reply(`Got it. Your clue text is posted in ${game.channel}`);
         game.channel.send(`Here's clue #${game.clues.length} from ${clue.author}: "${clue.text}"`);
     },
 }

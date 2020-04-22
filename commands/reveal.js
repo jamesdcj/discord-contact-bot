@@ -46,7 +46,7 @@ module.exports = {
 
         // TODO: verify that the clue has been !dontknow'd ?
 
-        var clueWordGuess = args[1];
+        var clueWordGuess = args[1].toLowerCase();
 
         if (clueWordGuess === targetClue.word) {
             game.advanceGame();
@@ -58,6 +58,7 @@ module.exports = {
                 game.channel.send(`Successful contact. Word thus far: "${game.secretWord.substring(0, game.revealLen)}"`);
             }          
         } else {
+            // This should invalidate the clue
             game.channel.send(`Incorrect guess: "${clueWordGuess}"`);
             targetClue.contact = false;
             targetClue.partner = null;
